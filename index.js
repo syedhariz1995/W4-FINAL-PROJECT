@@ -1,13 +1,9 @@
 // API = https://www.omdbapi.com/?i=tt3896198&apikey=25c6a9ee
 
 const movieListElement = document.querySelector('.movies');
-const searchBtn = document.getElementById('search__button');
-
-
-searchBtn.addEventListener('click', getMovieList);
 
 async function getMovieList(){
-    let movieNameInput = document.getElementById ('search__input').value.trim();
+    let movieNameInput = document.getElementById('search__input').value;
     const movies = await fetch(`https://www.omdbapi.com/?i=tt3896198&apikey=25c6a9ee&s=${movieNameInput || 'John Wick'}`);
     const moviesData = await movies.json();
     movieListElement.innerHTML = moviesData.Search.map(movie => movieHTML(movie)).join('')
@@ -24,8 +20,13 @@ return `<div class="movie">
     </figure>
         <div class="movie__info">
            <h3 class="title">${movie.Title}</h3> 
+           <h3 class="type">${movie.Type}</h3> 
             <p class="year">${movie.Year}</p>
         </div>
     </div>`
     ;
 }
+
+setTimeout(() => {
+    getMovieList();
+}, 2000);

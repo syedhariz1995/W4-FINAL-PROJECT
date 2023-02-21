@@ -142,7 +142,6 @@ SEARCH
 
 .search__container{
   background: #fff;
-  height: 60px;
   display: flex;
   align-items: center;
   padding: 0 32px;
@@ -157,7 +156,9 @@ SEARCH
   font-size: 14px;
   font-weight: 500;
   border: none;
+  outline: none;
   font-size: 20px;
+  height: 60px;
 }
 
 .search__button{
@@ -166,6 +167,7 @@ SEARCH
   background-color: transparent;
   transition: 90ms all ease-in-out;
   cursor: pointer;
+  padding: 12px 0;
 }
 
 .search__button i{
@@ -260,7 +262,7 @@ MOVIES
   width: 100%;
 }
 
-.year{
+.year, .type{
   padding-left: 40px;
   font-size: 20px;
   margin-top: 12px;
