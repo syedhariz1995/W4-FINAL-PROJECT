@@ -2,15 +2,29 @@
 
 const movieListElement = document.querySelector('.movies');
 
-async function getMovieList(){
+async function renderMovieList(filter){
     let movieNameInput = document.getElementById('search__input').value;
-    const movies = await fetch(`https://www.omdbapi.com/?i=tt3896198&apikey=25c6a9ee&s=${movieNameInput || 'John Wick'}`);
-    const moviesData = await movies.json();
-    movieListElement.innerHTML = moviesData.Search.map(movie => movieHTML(movie)).join('')
 
+    if(!movieNameInput){
+        movieNameInput = 'John Wick';
+    }
+    
+    const movies = await fetch(`https://www.omdbapi.com/?i=tt3896198&apikey=25c6a9ee&s=${movieNameInput}`);
+    const moviesData = await movies.json();
+
+    let moviesList = moviesData.Search
+    
+    if(filter === "NEW_TO_OLD"){
+        moviesList.sort((a,b) => (a.Year - b.Year))
+      }
+      else if( filter === "OLD_TO_NEW"){
+        moviesList.sort((a,b) =>( b.Year - a.Year))
+      }
+
+      movieListElement.innerHTML = moviesList.map(movie => movieHTML(movie)).join('')
 }
 
-getMovieList();
+renderMovieList();
 
 
 function movieHTML(movie) {
@@ -27,6 +41,7 @@ return `<div class="movie">
     ;
 }
 
-setTimeout(() => {
-    getMovieList();
-}, 2000);
+
+function filterMovies(event){
+    renderMovieList(event.target.value)
+}

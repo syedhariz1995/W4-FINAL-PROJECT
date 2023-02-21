@@ -39,7 +39,7 @@
         <!-- <h2>Search Movies</h2> -->
         <div class="search__container">
           <input type="search" class="search" placeholder="E.g. John Wick" id="search__input">
-          <button class="search__button" id="search__button" onclick="getMovieList()">
+          <button class="search__button" id="search__button" onclick="renderMovieList(filter)">
             <i class="fa-solid fa-magnifying-glass"></i>
           </button>
         </div>
@@ -48,8 +48,8 @@
           <h3>Your movies:</h3>
           <select id="filter" onchange="filterMovies(event)">
             <option value="" disabled selected>Sort</option>
-            <option value="NEW_TO_OLD">Year, New to Old</option>
-            <option value="OLD_TO_NEW">Year, Old to New</option>
+            <option value="NEW_TO_OLD">Year : Oldest to Latest</option>
+            <option value="OLD_TO_NEW">Year : Latest to Oldest</option>
           </select>
         </div>
 
