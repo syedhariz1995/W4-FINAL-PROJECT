@@ -21,6 +21,11 @@ html{
   margin: 0 auto;
 }
 
+.row h2{
+  text-align: center;
+  margin-top: 128px;
+}
+
 body{
   background-color: rgb(208, 202, 249);
 }
@@ -144,10 +149,11 @@ SEARCH
   background: #fff;
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 0 32px;
   border-radius: 30px;
   cursor: pointer;
-  margin: 128px auto;
+  margin: 40px auto 96px auto;
   max-width: 800px;
 }
 
@@ -159,6 +165,9 @@ SEARCH
   outline: none;
   font-size: 20px;
   height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .search__button{
@@ -217,6 +226,7 @@ MOVIES
   align-items: center;
   justify-content: center;
   width: 100%;
+  margin: 12px;
 }
 
 .movie{
@@ -262,8 +272,107 @@ MOVIES
   width: 100%;
 }
 
-.year, .type{
+.year,
+.type{
   padding-left: 40px;
   font-size: 20px;
   margin-top: 12px;
+}
+
+
+
+
+/* 
+
+RESPONSIVENESS 
+
+*/
+
+
+
+@media (max-width: 768px) {
+
+  header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  header h1{
+    font-size: 40px;
+  }
+
+  header img{
+    width: 75%;
+  }
+
+  .row{
+    padding: 0 32px;
+  }
+
+  .movies{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .movie{
+    display: flex;
+    flex-direction: column;
+    width: calc(100%/2)
+  }
+}
+
+@media (max-width: 480px) {
+  .nav__home{
+    display: none;
+  }
+
+  .header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  header h1{
+    font-size: 24px;
+  }
+
+  .main__sub--title{
+    font-size: 20px;
+  }
+
+  .explore__anchor{
+    margin-top: 20px;
+    padding: 12px 20px;
+    font-size: 18px;
+    border-radius: 8px;
+    border: none;
+    background-color: #a784f9;
+    color: white;
+    font-weight: 700;
+  }
+
+  .row h3{
+    font-size: 20px;
+  }
+
+  .search{
+    height: 50px;
+  }
+
+  .movies{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .movie{
+    width: 100%;
+    max-height: 100%;
+  }
+
+  .movie__info{
+    display: flex;
+    flex-direction: column;
+  }
 }
