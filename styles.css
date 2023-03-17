@@ -113,6 +113,9 @@ header{
 .main__sub--title{
   margin: 32px 0 50px 0;
   font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .explore__anchor{
@@ -127,7 +130,7 @@ header{
 }
 
 figure{
-  margin-top: 50px;
+  margin-top: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -135,6 +138,10 @@ figure{
 
 .figure ,img{
   width: 80%;
+}
+
+.header__img{
+  width: 70%;
 }
 
 
@@ -153,7 +160,7 @@ SEARCH
   padding: 0 32px;
   border-radius: 30px;
   cursor: pointer;
-  margin: 40px auto 96px auto;
+  margin: 40px auto 40px auto;
   max-width: 800px;
 }
 
@@ -204,6 +211,16 @@ select{
 
 .search__results h3{
   font-size: 32px;
+}
+
+.loading {
+  background-color: white;
+  transition: all 300ms ease;
+}
+
+button, i{
+  font-size: 20px;
+  width: 50px;
 }
 
 
@@ -340,6 +357,9 @@ RESPONSIVENESS
 
   .main__sub--title{
     font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .explore__anchor{

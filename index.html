@@ -17,23 +17,34 @@
       </a>
       <ul class="nav__links">
         <li><a class="nav__link nav__home" href="">Home</a></li>
-        <li><a class="nav__link" href="#movie__panel">Movies</a></li>
+        <li><a class="nav__link" href="movie.html">Movies</a></li>
         <li><a class="nav__link" href="">Contact</a></li>
       </ul>
     </nav>
 
     <header>
-      <h1>Watch any movies in <span class="hd-color">HD Quality!</span></h1>
-      <h3 class="main__sub--title">Search for your desired movies!</h3>
-      <button><a class="explore__anchor" href="#movie__panel">Explore movies</a></button>
+      <div class="container">
+        <div class="row">
+          <h1>Watch any movies in <span class="hd-color">HD Quality!</span></h1>
+          <h3 class="main__sub--title">Search for your desired movies!</h3>
+      <div class="search__container">
+        <input type="search" class="search" placeholder="E.g. John Wick" id="search__input" onchange ="onSearchChange(event)">
+        <button class="search__button" id="search__button">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </div>
+      <!-- <button><a class="explore__anchor" href="#movie__panel">Explore movies</a></button> -->
 
       <figure>
-        <img src="./assets/undraw_home_cinema_l7yl.svg" alt="">
+        <img class="header__img" src="./assets/undraw_home_cinema_l7yl.svg" alt="">
       </figure>
+        </div>
+      </div>
+      
     </header>
   </section>
 
-  <section id="movie__panel">
+  <!-- <section id="movie__panel">
     <div class="container">
       <div class="row">
         <h2>Search Movies</h2>
@@ -71,7 +82,7 @@
 
       </div>
     </div>
-  </section>
+  </section> -->
   
 </body>
 <script src="index.js"></script>
